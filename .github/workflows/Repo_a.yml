@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       who-to-greet:
+        description: 'Name of the person to greet'
         required: true
         type: string
 
@@ -13,5 +14,3 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "👋 Hello, ${{ inputs.who-to-greet }}!"
-
-
