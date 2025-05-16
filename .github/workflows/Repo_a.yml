@@ -1,0 +1,13 @@
+# Repo B: .github/workflows/reusable.yml
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+
+jobs:
+  show-message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "📩 Message: ${{ inputs.message }}"
