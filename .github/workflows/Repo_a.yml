@@ -1,13 +1,16 @@
-# Repo B: .github/workflows/reusable.yml
+name: Reusable Workflow
+
 on:
   workflow_call:
     inputs:
-      message:
+      who-to-greet:
         required: true
         type: string
 
 jobs:
-  show-message:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "📩 Message: ${{ inputs.message }}"
+      - name: Say Hello
+        run: echo "👋 Hello, ${{ inputs['who-to-greet'] }}!"
+
